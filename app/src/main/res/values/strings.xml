@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="question_one">Why shouldn\'t you dive when having the flu?</string>
+    <string name="answer_one_pressure">The water pressure intensifies the symptoms</string>
+    <string name="answer_one_eardrum">A pressure equalization is not possible and the eardrum may be damaged</string>
+    <string name="question_two">Which gas do body cells need to work properly?</string>
+    <string name="answer_two">Oxygen</string>
+    <string name="question_three">How can a panicking person be approached in the water?</string>
+    <string name="answer_three_front">Approach form front, talk the person down, hand something to keep distance</string>
+    <string name="answer_three_back">Approach from back, grab quickly</string>
+    <string name="answer_three_not">The person should never be approached</string>
+    <string name="answer_three_without">The person can be approach without special care</string>
+    <string name="question_four">What is the average breathing frequency of an adult? (Breaths per minute)</string>
+    <string name="answer_four_8">8</string>
+    <string name="answer_four_10">10</string>
+    <string name="answer_four_12">12</string>
+    <string name="answer_four_14">14</string>
+    <string name="question_five">When helping someone what should always be considered?</string>
+    <string name="answer_five_nothing">Don\'t think, just do!</string>
+    <string name="answer_five_brave">Be braver and quicker than usual. Someone needs your help!</string>
+    <string name="answer_five_calm">Keep calm and consider your own protection first</string>
+    <string name="submit_button">Submit answers</string>
+    <string name="reset_button">Try again!</string>
+    <string name="hint_question_two">Gas</string>
+    <string name="toast0">Zero answers right. Please take part in a fist aid course!</string>
+    <string name="toast1">One answer right. There is still a lot to learn for you!</string>
+    <string name="toast2">Two ansewers right. Your life saving skills need some improvement!</string>
+    <string name="toast3">Three answers right. Your life saving skills need a little improvement!</string>
+    <string name="toast4">Four answers right. You are nearly a professional but maybe you should refresh your knowledge?</string>
+    <string name="toast5">Five answers right. Wow! You will know what to do in any situation!</string>
+</resources>
