@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //SubmitAnswers method is calles when Submit answers- Button is clicked
+    //SubmitAnswers method is called when Submit answers- Button is clicked
     public void SubmitAnswers(View view) {
 
         //Initiates question one right Radio Button
@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Method to display the right toast according to the number of right answers
     public void displayToast(int numberRightAnswers) {
-
         if (numberRightAnswers == 5) {
             Toast professionalToast = Toast.makeText(this, getString(R.string.toast5), Toast.LENGTH_LONG);
             professionalToast.show();
@@ -105,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             zeroToast.show();
         }
     }
+
 
     // Method that is called when pressing the Try again!- Button. Resets all variables and undoes TextEdits, CheckBoxes and RadioButtons
     public int reset(View view) {
