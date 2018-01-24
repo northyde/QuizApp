@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-   //Counts the number of right answers and gives them to the display method
+    //Counts the number of right answers and gives them to the display method
     public void evaluation(int numberRightAnswers, boolean isRightOne, boolean isRightTwo, boolean isRightThree, boolean isRightFour, boolean isRightFive) {
         if (isRightOne) numberRightAnswers++;
         if (isRightTwo) numberRightAnswers++;
@@ -108,33 +108,31 @@ public class MainActivity extends AppCompatActivity {
 
     // Method that is called when pressing the Try again!- Button. Resets all variables and undoes TextEdits, CheckBoxes and RadioButtons
     public int reset(View view) {
-        int numberRightAnswers = 0;
+        //Find Checkboxes
         CheckBox front = (CheckBox) (findViewById(R.id.front_checkBox));
         CheckBox back = (CheckBox) (findViewById(R.id.back_checkBox));
         CheckBox not = (CheckBox) (findViewById(R.id.not_checkBox));
         CheckBox nothing = (CheckBox) (findViewById(R.id.nothing_checkBox));
+        //Reset CheckBoxes for question three
         if (front.isChecked()) front.toggle();
         if (back.isChecked()) back.toggle();
         if (not.isChecked()) not.toggle();
         if (nothing.isChecked()) nothing.toggle();
+        //Reset TextEdit for question two to show hint
         EditText gas_editText = (EditText) (findViewById(R.id.gas_editText));
         gas_editText.setText("");
-        isRightOne = false;
-        isRightTwo = false;
-        isRightThree = false;
-        isRightFour = false;
-        isRightFive = false;
+        //Reset RadioGroups for questions one, four and five
         RadioGroup groupOne = (RadioGroup) (findViewById(R.id.questionOneGroup));
         groupOne.clearCheck();
         RadioGroup groupFour = (RadioGroup) (findViewById(R.id.questionFourGroup));
         groupFour.clearCheck();
         RadioGroup groupFive = (RadioGroup) (findViewById(R.id.questionFiveGroup));
         groupFive.clearCheck();
+        //Reset variable that holds the number of right answers
+        int numberRightAnswers = 0;
         return numberRightAnswers;
     }
 }
 
 
-//Check for name conventions
 
-//initialisation of Checkboxes etc somewhere in the beginnging?
