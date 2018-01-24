@@ -6,7 +6,7 @@
     <string name="question_two">Which gas do body cells need to work properly?</string>
     <string name="answer_two">Oxygen</string>
     <string name="question_three">How can a panicking person be approached in the water?</string>
-    <string name="answer_three_front">Approach form front, talk the person down, hand something to keep distance</string>
+    <string name="answer_three_front">Approach form front, calm the person down, hand something to keep distance</string>
     <string name="answer_three_back">Approach from back, grab quickly</string>
     <string name="answer_three_not">The person should never be approached</string>
     <string name="answer_three_without">The person can be approach without special care</string>

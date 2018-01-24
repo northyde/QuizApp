@@ -7,8 +7,8 @@
     tools:context="com.example.android.quizapp.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height= "wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -54,7 +54,7 @@
         <EditText
             android:id="@+id/gas_editText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginBottom="@dimen/answer_margin_bottom"
             android:layout_marginTop="@dimen/answer_margin_top"
             android:hint="@string/hint_question_two"

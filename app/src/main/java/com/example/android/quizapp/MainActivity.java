@@ -4,14 +4,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.android.quizapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,31 +37,31 @@ public class MainActivity extends AppCompatActivity {
     public void SubmitAnswers(View view) {
 
         //Initiates question one right Radio Button
-        RadioButton OneRadioButton = (RadioButton) (findViewById(R.id.eardrum_radioButton));
+        RadioButton OneRadioButton = findViewById(R.id.eardrum_radioButton);
         //Checks if question one is answered right
         isRightOne = OneRadioButton.isChecked();
 
         //Initiates question two EditText
-        EditText gas_editText = (EditText) (findViewById(R.id.gas_editText));
+        EditText gas_editText = findViewById(R.id.gas_editText);
         String gasName = gas_editText.getText().toString().trim();
         //Checks if question two is answered right
         isRightTwo = (gasName.equalsIgnoreCase(getString(R.string.answer_two)));
 
         //Initiates question three CheckBoxes
-        CheckBox front = (CheckBox) (findViewById(R.id.front_checkBox));
-        CheckBox back = (CheckBox) (findViewById(R.id.back_checkBox));
-        CheckBox not = (CheckBox) (findViewById(R.id.not_checkBox));
-        CheckBox nothing = (CheckBox) (findViewById(R.id.nothing_checkBox));
+        CheckBox front = findViewById(R.id.front_checkBox);
+        CheckBox back = findViewById(R.id.back_checkBox);
+        CheckBox not = findViewById(R.id.not_checkBox);
+        CheckBox nothing =findViewById(R.id.nothing_checkBox);
         //Checks if question three is answered right
         isRightThree = (front.isChecked() && back.isChecked() && !not.isChecked() && !nothing.isChecked());
 
         //Initiates question four right RadioButton
-        RadioButton FourRadioButton = (RadioButton) (findViewById(R.id.twelve_radioButton));
+        RadioButton FourRadioButton = findViewById(R.id.twelve_radioButton);
         //Checks if question four is right
         isRightFour = FourRadioButton.isChecked();
 
         //Initiates question five right RadioButton
-        RadioButton FiveRadioButton = (RadioButton) (findViewById(R.id.calm_radioButton));
+        RadioButton FiveRadioButton = findViewById(R.id.calm_radioButton);
         //Checks if question five is right
         isRightFive = FiveRadioButton.isChecked();
         //Collects variables for right answers and gives them away for evaluation
@@ -109,24 +107,24 @@ public class MainActivity extends AppCompatActivity {
     // Method that is called when pressing the Try again!- Button. Resets all variables and undoes TextEdits, CheckBoxes and RadioButtons
     public int reset(View view) {
         //Find Checkboxes
-        CheckBox front = (CheckBox) (findViewById(R.id.front_checkBox));
-        CheckBox back = (CheckBox) (findViewById(R.id.back_checkBox));
-        CheckBox not = (CheckBox) (findViewById(R.id.not_checkBox));
-        CheckBox nothing = (CheckBox) (findViewById(R.id.nothing_checkBox));
+        CheckBox front = findViewById(R.id.front_checkBox);
+        CheckBox back = findViewById(R.id.back_checkBox);
+        CheckBox not = findViewById(R.id.not_checkBox);
+        CheckBox nothing = findViewById(R.id.nothing_checkBox);
         //Reset CheckBoxes for question three
         if (front.isChecked()) front.toggle();
         if (back.isChecked()) back.toggle();
         if (not.isChecked()) not.toggle();
         if (nothing.isChecked()) nothing.toggle();
         //Reset TextEdit for question two to show hint
-        EditText gas_editText = (EditText) (findViewById(R.id.gas_editText));
+        EditText gas_editText = findViewById(R.id.gas_editText);
         gas_editText.setText("");
         //Reset RadioGroups for questions one, four and five
-        RadioGroup groupOne = (RadioGroup) (findViewById(R.id.questionOneGroup));
+        RadioGroup groupOne = findViewById(R.id.questionOneGroup);
         groupOne.clearCheck();
-        RadioGroup groupFour = (RadioGroup) (findViewById(R.id.questionFourGroup));
+        RadioGroup groupFour = findViewById(R.id.questionFourGroup);
         groupFour.clearCheck();
-        RadioGroup groupFive = (RadioGroup) (findViewById(R.id.questionFiveGroup));
+        RadioGroup groupFive = findViewById(R.id.questionFiveGroup);
         groupFive.clearCheck();
         //Reset variable that holds the number of right answers
         int numberRightAnswers = 0;
