@@ -20,6 +20,20 @@ public class MainActivity extends AppCompatActivity {
     boolean isRightFour = false;
     boolean isRightFive = false;
     int numberRightAnswers = 0;
+    // Radio Buttons for the right answers of questions one, four and five
+    RadioButton OneRadioButton;
+    RadioButton FourRadioButton;
+    RadioButton FiveRadioButton;
+    RadioGroup groupOne;
+    RadioGroup groupFour;
+    RadioGroup groupFive;
+    //Question two EditText
+    EditText gas_editText;
+    //Question three CheckBoxes
+    CheckBox front;
+    CheckBox back;
+    CheckBox nothing;
+    CheckBox not;
 
 
     @Override
@@ -31,46 +45,46 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_main);
+        //Initiates questions one, four, five right Radio Buttons
+        OneRadioButton = findViewById(R.id.eardrum_radioButton);
+        FourRadioButton = findViewById(R.id.twelve_radioButton);
+        FiveRadioButton = findViewById(R.id.calm_radioButton);
+        // Initiates questions one, four, five RadioGroups
+        groupOne = findViewById(R.id.questionOneGroup);
+        groupFour = findViewById(R.id.questionFourGroup);
+        groupFive = findViewById(R.id.questionFiveGroup);
+        //Initiates question two EditText
+        gas_editText = findViewById(R.id.gas_editText);
+        //Initiates question three CheckBoxes
+        front = findViewById(R.id.front_checkBox);
+        back = findViewById(R.id.back_checkBox);
+        not = findViewById(R.id.not_checkBox);
+        nothing = findViewById(R.id.nothing_checkBox);
     }
+
 
     //SubmitAnswers method is called when Submit answers- Button is clicked
     public void SubmitAnswers(View view) {
-
-        //Initiates question one right Radio Button
-        RadioButton OneRadioButton = findViewById(R.id.eardrum_radioButton);
         //Checks if question one is answered right
         isRightOne = OneRadioButton.isChecked();
-
-        //Initiates question two EditText
-        EditText gas_editText = findViewById(R.id.gas_editText);
+        //Gets the string from the text entered in question two EditText
         String gasName = gas_editText.getText().toString().trim();
         //Checks if question two is answered right
         isRightTwo = (gasName.equalsIgnoreCase(getString(R.string.answer_two)));
-
-        //Initiates question three CheckBoxes
-        CheckBox front = findViewById(R.id.front_checkBox);
-        CheckBox back = findViewById(R.id.back_checkBox);
-        CheckBox not = findViewById(R.id.not_checkBox);
-        CheckBox nothing =findViewById(R.id.nothing_checkBox);
         //Checks if question three is answered right
         isRightThree = (front.isChecked() && back.isChecked() && !not.isChecked() && !nothing.isChecked());
-
-        //Initiates question four right RadioButton
-        RadioButton FourRadioButton = findViewById(R.id.twelve_radioButton);
         //Checks if question four is right
         isRightFour = FourRadioButton.isChecked();
-
-        //Initiates question five right RadioButton
-        RadioButton FiveRadioButton = findViewById(R.id.calm_radioButton);
         //Checks if question five is right
         isRightFive = FiveRadioButton.isChecked();
         //Collects variables for right answers and gives them away for evaluation
-        evaluation(numberRightAnswers, isRightOne, isRightTwo, isRightThree, isRightFour, isRightFive);
+        evaluation(isRightOne, isRightTwo, isRightThree, isRightFour, isRightFive);
     }
 
 
     //Counts the number of right answers and gives them to the display method
-    public void evaluation(int numberRightAnswers, boolean isRightOne, boolean isRightTwo, boolean isRightThree, boolean isRightFour, boolean isRightFive) {
+    public void evaluation(boolean isRightOne, boolean isRightTwo, boolean isRightThree, boolean isRightFour, boolean isRightFive) {
+        numberRightAnswers = 0;
         if (isRightOne) numberRightAnswers++;
         if (isRightTwo) numberRightAnswers++;
         if (isRightThree) numberRightAnswers++;
@@ -105,30 +119,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Method that is called when pressing the Try again!- Button. Resets all variables and undoes TextEdits, CheckBoxes and RadioButtons
-    public int reset(View view) {
-        //Find Checkboxes
-        CheckBox front = findViewById(R.id.front_checkBox);
-        CheckBox back = findViewById(R.id.back_checkBox);
-        CheckBox not = findViewById(R.id.not_checkBox);
-        CheckBox nothing = findViewById(R.id.nothing_checkBox);
+    public void reset(View view) {
         //Reset CheckBoxes for question three
         if (front.isChecked()) front.toggle();
         if (back.isChecked()) back.toggle();
         if (not.isChecked()) not.toggle();
         if (nothing.isChecked()) nothing.toggle();
         //Reset TextEdit for question two to show hint
-        EditText gas_editText = findViewById(R.id.gas_editText);
         gas_editText.setText("");
         //Reset RadioGroups for questions one, four and five
-        RadioGroup groupOne = findViewById(R.id.questionOneGroup);
         groupOne.clearCheck();
-        RadioGroup groupFour = findViewById(R.id.questionFourGroup);
         groupFour.clearCheck();
-        RadioGroup groupFive = findViewById(R.id.questionFiveGroup);
         groupFive.clearCheck();
-        //Reset variable that holds the number of right answers
-        int numberRightAnswers = 0;
-        return numberRightAnswers;
+
     }
 }
 
